@@ -5,7 +5,6 @@ import ActiveTasks from '../components/ActiveTasks';
 import CompletedTasks from '../components/CompletedTasks';
 
 function TodoApp() {
-  // Khôi phục tasks từ localStorage hoặc dùng dữ liệu mẫu nếu chưa có
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem('todoTasks');
     return savedTasks
@@ -18,7 +17,7 @@ function TodoApp() {
   const [currentTab, setCurrentTab] = useState('all');
   const [form] = Form.useForm();
 
-  // Lưu tasks vào localStorage mỗi khi tasks thay đổi
+  
   useEffect(() => {
     localStorage.setItem('todoTasks', JSON.stringify(tasks));
   }, [tasks]);
